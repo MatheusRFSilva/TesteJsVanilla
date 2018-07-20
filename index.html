@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>teste javascript vanilla</title>
+
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+
+
+
+</head>
+
+<body>
+
+  <div class="container-fluid" id="elemento">
+  <div class="row">
+    <div class="col-md-12">
+
+      <form id="formulario_teste">
+        <div class="form-row">
+            <div id="frm_nome" class="form-group col-md-6">
+                <label>Nome</label>
+                <input type="text" class="form-control" placeholder="Digite seu nome" >
+                <small></small>
+            </div>
+            <div id="frm_email" class="form-group col-md-6">
+                <label>Email</label>
+                <input type="text" class="form-control" placeholder="Digite seu email">
+                <small></small>
+            </div>
+            <div id="frm_cpf" class="form-group col-md-6">
+                <label>CPF</label>
+                <input type="text" class="form-control" onkeypress="validacao.mascaraCPF('000.000.000-00',event)" placeholder="Digite seu cpf">
+                <small></small>
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div id="frm_unico" class="form-group col-md-6">
+                <label>Cor do carro</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="radio_escolha" value="vermelho">
+                    <label class="form-check-label">Vermelho</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="radio_escolha" value="verde">
+                    <label class="form-check-label">Verde</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="radio_escolha" value="azul">
+                    <label class="form-check-label">Azul</label>
+                </div>
+                <small></small>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="form-check-label" for="">Acessórios</label>
+                <div id="frm_multiplo_1" class="form-check">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Sim</label>
+                    <br /><small></small>
+                </div>
+            </div>
+      </div>
+
+      <div class="form-row">
+        <div id="frm_aro" class="form-group col-md-6">
+            <label>Tamanho da roda</label>
+            <select class="form-control">
+                <option   selected      ></option>
+                <option value="roda 15"    >roda 15</option>
+                <option value="roda 16"    >roda 16</option>
+                <option value="roda 17"    >roda 17</option>
+                <option value="roda 19"    >roda 19</option>
+                <option value="roda 21"    >roda 21</option>
+            </select>
+            <small></small>
+        </div>
+
+        <div id="frm_pneu" class="form-group col-md-6">
+            <label>Tamanho do Pneu</label>
+            <select class="form-control" size="3">
+                <option value="250"    >250</option>
+                <option value="270"    >270</option>
+                <option value="310"    >310</option>
+                <option value="330"    >330</option>
+            </select>
+            <small></small>
+        </div>
+      </div>
+
+      <div id="frm_textarea" class="form-group">
+          <label>Observações do Pedido </label>
+          <textarea class="form-control" rows="2"></textarea>
+          <small></small>
+      </div>
+
+      <button type="reset" id="btnReset" class="btn btn-light">limpar</button>
+      <button type="button" id="btnEnviar" class="btn btn-primary">Enviar</button>
+
+    </form>
+
+   </div>
+ </div>
+</div>
+
+
+    <script type="text/javascript" src="js/app/Validacao.js">
+
+    </script>
+    <script type="text/javascript">
+    validacao = new Validacao();
+      let campoSalvar = document.querySelector('#btnEnviar');
+      let campoReset = document.querySelector('#btnReset');
+
+      campoSalvar.addEventListener('click',()=> validacao.enviar());
+      campoReset.addEventListener('click',()=>validacao.limpaCampos());
+    </script>
+
+
+
+</body>
+
+</html>
